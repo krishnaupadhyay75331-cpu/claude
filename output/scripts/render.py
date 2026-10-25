@@ -784,7 +784,7 @@ def end_card(t0, t1, phone):
         n1, n2 = name_layer(t)
         for img, y in ((n1, 700), (n2, 830)):
             im = scale_p(img, s)
-            glow = im.copy(); glow[..., 3] = cv2.GaussianBlur(im[..., 3], (0, 0), 18)
+            glow = np.pad(im, ((60, 60), (60, 60), (0, 0))); glow[..., 3] = cv2.GaussianBlur(glow[..., 3], (0, 0), 18)
             glow[..., :3] = np.array(GOLD1, np.float32) * (glow[..., 3:4] / 255.0)
             blitc(c, glow, W / 2, y, 0.55 * p)
             blitc(c, im, W / 2, y, p)
