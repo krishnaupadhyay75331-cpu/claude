@@ -56,9 +56,11 @@ def sky_mask(rgb):
     tex = cv2.Laplacian(cv2.GaussianBlur(lum, (3, 3), 0), cv2.CV_32F)
     smooth = cv2.GaussianBlur(np.abs(tex), (5, 5), 0) < 6
     cand = (blue & smooth).astype(np.uint8)
-    n, lab = cv2.connectedComponents(cand, connectivity=4)
-    top = set(np.unique(lab[: max(2, rgb.shape[0] // 40)])) - {0}
-    sky = np.isin(lab, list(top)).astype(np.uint8)
+    # bridge thin wires for connectivity only, so sky between wires still counts
+    bridged = cv2.morphologyEx(cand, cv2.MORPH_CLOSE, np.ones((7, 7), np.uint8))
+    n, lab = cv2.connectedComponents(bridged, connectivity=4)
+    top = set(np.unique(lab[: max(2, rgb.shape[0] // 20)])) - {0}
+    sky = (np.isin(lab, list(top)) & (cand > 0)).astype(np.uint8)
     # close pinholes inside the sky but keep thin poles / wires as occluders
     sky = cv2.morphologyEx(sky, cv2.MORPH_OPEN, np.ones((2, 2), np.uint8))
     return sky.astype(np.float32)
@@ -109,3 +111,19 @@ def track_points(grays, i0, pts):
             out[i] = np.where(st.reshape(-1, 1, 1) == 1, p, out[prev])
             prev = i
     return [[(float(q[0][0]) / W, float(q[0][1]) / H) for q in o] for o in out]
+
+
+def sky_occluder(rgb):
+    """Things that poke up into the sky (poles, wires, roofs, branches, bunting).
+
+    Per column the skyline is the lowest sky pixel, widened over neighbouring
+    columns so a pole with sky on both sides still counts as in front. Below the
+    skyline nothing occludes, so a hero that dips under the roofline stays legible.
+    Returns float 0..1 (1 = occluder)."""
+    sky = sky_mask(rgb) > 0
+    H, W = sky.shape
+    has = sky.any(axis=0)
+    last = np.where(has, H - 1 - np.argmax(sky[::-1], axis=0), -1).astype(np.float32)
+    skyline = cv2.dilate(last.reshape(1, -1), np.ones((1, 25), np.uint8)).ravel()
+    rows = np.arange(H, dtype=np.float32)[:, None]
+    return ((~sky) & (rows < skyline[None, :])).astype(np.float32)

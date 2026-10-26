@@ -101,11 +101,11 @@ def assemble(work, out, kind, audio):
 def loudnorm(src, dst):
     """Two-pass EBU R128 to -14 LUFS integrated, -1 dBTP."""
     p = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(src), "-af",
-                        "loudnorm=I=-14:TP=-1.0:LRA=11:print_format=json", "-f", "null", "-"],
+                        "loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json", "-f", "null", "-"],
                        capture_output=True, text=True).stderr
     m = json.loads(p[p.rindex("{"):p.rindex("}") + 1])
     run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-af",
-         f"loudnorm=I=-14:TP=-1.0:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:"
+         f"loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:"
          f"measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:offset={m['target_offset']}:"
          f"linear=true,aresample=48000", "-c:a", "pcm_s24le", str(dst)])
 

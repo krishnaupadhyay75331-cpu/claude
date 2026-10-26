@@ -31,18 +31,18 @@ WORD_STEP = round(FPS / 2.2)  # ~2.2 words per second
 #   vis: "sky"  -> text shows only over sky (roofs, poles, wires, flags occlude)
 #   occ: list of ("pts", [(x, y)...], box) | ("foliage",)
 #   tops/prefer: search range and preferred (cx, top) for auto placement
-UPPER = dict(tops=range(320, 760, 15), prefer=(540, 380))
+UPPER = dict(tops=range(320, 900, 15), prefer=(540, 380))
 CFG = {
     1: dict(vis="sky", **UPPER),
     2: dict(vis="sky", **UPPER),
     4: dict(vis="sky", **UPPER),
     5: dict(vis="sky", **UPPER),
-    6: dict(occ=[("foliage",)], tops=range(320, 1100, 20), prefer=(540, 420)),
+    6: dict(occ=[("foliage",)], tops=range(320, 1300, 20), prefer=(540, 420)),
     8: dict(vis="sky", **UPPER),
     9: dict(occ=[("pts", [(0.37, 0.47), (0.37, 0.56), (0.38, 0.68)], (0.18, 0.40, 0.60, 0.82)), ("pole",)],
             tops=range(560, 760, 10), prefer=(540, 740), min_total=0.06, max_hidden=0.35),
     11: dict(vis="sky", **UPPER),
-    12: dict(occ=[("foliage",)], tops=range(320, 1000, 20), prefer=(540, 400)),
+    12: dict(occ=[("foliage", 0.45)], tops=range(320, 1100, 20), prefer=(540, 400), fit="cap", max_hidden=0.35),
     13: dict(vis="sky", tops=range(320, 900, 15), prefer=(540, 380)),
     16: dict(occ=[("pts", [(0.62, 0.40)], (0.52, 0.28, 0.78, 0.52)),
                   ("pts", [(0.62, 0.15), (0.62, 0.62), (0.62, 0.85)], (0.57, 0.0, 0.70, 1.0))],
@@ -51,7 +51,7 @@ CFG = {
                   ("pts", [(0.27, 0.25)], (0.24, 0.0, 0.31, 0.5))],
              tops=range(320, 800, 15), prefer=(540, 380)),
     19: dict(occ=[("pts", [(0.47, 0.30), (0.60, 0.40)], (0.35, 0.05, 0.85, 0.95))],
-             tops=range(320, 1000, 20), prefer=(540, 480), max_hidden=0.40),
+             tops=range(320, 1100, 20), prefer=(540, 480), max_hidden=0.25),
     21: dict(occ=[("pts", [(0.24, 0.29)], (0.15, 0.20, 0.33, 0.38))],
              tops=range(320, 900, 15), prefer=(540, 380)),
     22: dict(occ=[("pts", [(0.24, 0.27), (0.35, 0.27)], (0.15, 0.18, 0.45, 0.36))],
@@ -60,13 +60,13 @@ CFG = {
              tops=range(320, 900, 15), prefer=(540, 380)),
     24: dict(occ=[("pts", [(0.62, 0.62)], (0.48, 0.48, 0.78, 0.80)),
                   ("pts", [(0.18, 0.86)], (0.0, 0.65, 0.45, 1.0))],
-             tops=range(1000, 1400, 15), prefer=(540, 1150)),
-    25: dict(vis="sky", tops=range(420, 800, 15), prefer=(540, 440)),
+             tops=range(320, 1400, 15), prefer=(540, 1150), max_hidden=0.20),
+    25: dict(vis="sky", tops=range(360, 900, 15), prefer=(540, 380)),
     26: dict(occ=[("pts", [(0.24, 0.27)], (0.15, 0.18, 0.33, 0.36))],
              tops=range(320, 900, 15), prefer=(540, 380)),
-    27: dict(occ=[("pts", [(0.62, 0.40)], (0.52, 0.28, 0.78, 0.52)),
-                  ("pts", [(0.62, 0.15), (0.62, 0.62), (0.62, 0.85)], (0.57, 0.0, 0.70, 1.0))],
-             tops=range(320, 1200, 20), prefer=(540, 940), max_hidden=0.40),
+    # CTA: the brand name must read, so only the signboard edge sits in front
+    27: dict(occ=[("pts", [(0.62, 0.40)], (0.52, 0.28, 0.78, 0.52))],
+             tops=range(320, 700, 20), prefer=(540, 400), max_hidden=0.30),
 }
 FLASH_PTS = ([(0.43, 0.595), (0.42, 0.635), (0.415, 0.655)], (0.37, 0.56, 0.48, 0.685))
 HERO_W = 780
@@ -91,7 +91,10 @@ def stabilised(shot):
 
 def occluder(spec, rgb, pts):
     if spec[0] == "foliage":
-        return masks.foliage_mask(rgb)
+        m = masks.foliage_mask(rgb)
+        if len(spec) > 1:  # only the canopy above this fraction of the height
+            m[int(spec[1] * m.shape[0]):] = 0
+        return m
     if spec[0] == "pole":
         px = masks.find_pole_x(rgb)
         return masks.point_mask(rgb, [(px, 0.12), (px, 0.30)], box=(px - 0.015, 0.0, px + 0.015, 0.62))
@@ -156,7 +159,7 @@ def render_shot(shot):
             return None
         rgb = frames[i]
         if cfg.get("vis") == "sky":
-            m = masks.sky_mask(rgb)
+            m = 1 - masks.sky_occluder(rgb)
         else:
             occ = np.zeros(rgb.shape[:2], np.float32)
             for spec, tr in zip(cfg["occ"], tracks):
@@ -269,7 +272,9 @@ def small_pos(text, idx, n, box):
         return x0 + 6, y0 - 98
     if n == 2:
         return ((x0 + 6, y0 - 98), (min(x1 - w, look.W - 140 - w), y1 + 30))[idx]
-    return ((x0 + 6, y0 - 196), (x0 + 130, y0 - 98), (min(x1 - w, look.W - 140 - w), y1 + 30))[idx]
+    # "So" low-left, "your" higher and to its right, "future" below-right of the hero
+    w0 = typo.small_width("So")
+    return ((x0 + 6, y0 - 98), (x0 + w0 + 60, y0 - 140), (min(x1 - w, look.W - 140 - w), y1 + 30))[idx]
 
 
 def render_endcard():
