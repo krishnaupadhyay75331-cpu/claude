@@ -1,6 +1,8 @@
 {
   "project": "Find Us route reel - Shri Maa Chamunda Jyotish, Jodhpur",
   "fps": 30,
+  "music_bpm": 112.5,
+  "frames_per_beat": 16.0,
   "resolution": [
     1080,
     1920
@@ -10,19 +12,19 @@
     "probed": "HEVC 550x978, ~28.8 fps VFR, 86.38 s",
     "conform": "fps=30 (frame duplication, no blending)"
   },
-  "total_frames": 1212,
-  "total_seconds": 40.4,
+  "total_frames": 1216,
+  "total_seconds": 40.53333333333333,
   "shots": [
     {
       "shot": 1,
       "description": "Busy market street, woman in red sari on white scooter",
       "edit_in_frame": 0,
-      "edit_out_frame": 39,
-      "duration_frames": 39,
+      "edit_out_frame": 40,
+      "duration_frames": 40,
       "edit_in_tc": "00:00:00:00",
-      "edit_out_tc": "00:00:01:09",
+      "edit_out_tc": "00:00:01:10",
       "source_in_frame": 24,
-      "source_out_frame": 63,
+      "source_out_frame": 64,
       "source_in_s": 0.8,
       "source_out_s": 2.1,
       "speed_pct": 100,
@@ -36,7 +38,7 @@
           "in_frame": 3,
           "position": "above-left",
           "entrance_frames": 3,
-          "out_frame": 39
+          "out_frame": 40
         },
         {
           "layer": "B",
@@ -48,7 +50,7 @@
           "position": "sky upper third",
           "entrance_frames": 5,
           "lands_frame": 17,
-          "out_frame": 39
+          "out_frame": 40
         }
       ],
       "notes": "Frames 1-2: woman+scooter mask filled #FFFFFF, hard off on frame 3. Hero behind shop awnings (L) and pole (L edge) via sky key."
@@ -56,13 +58,13 @@
     {
       "shot": 2,
       "description": "Market, fruit cart passing",
-      "edit_in_frame": 39,
-      "edit_out_frame": 81,
-      "duration_frames": 42,
-      "edit_in_tc": "00:00:01:09",
-      "edit_out_tc": "00:00:02:21",
+      "edit_in_frame": 40,
+      "edit_out_frame": 80,
+      "duration_frames": 40,
+      "edit_in_tc": "00:00:01:10",
+      "edit_out_tc": "00:00:02:20",
       "source_in_frame": 90,
-      "source_out_frame": 132,
+      "source_out_frame": 130,
       "source_in_s": 3.0,
       "source_out_s": 4.4,
       "speed_pct": 100,
@@ -73,10 +75,10 @@
           "lines": [
             "Your"
           ],
-          "in_frame": 41,
+          "in_frame": 42,
           "position": "above-left",
           "entrance_frames": 3,
-          "out_frame": 81
+          "out_frame": 80
         },
         {
           "layer": "A",
@@ -84,10 +86,10 @@
           "lines": [
             "path to"
           ],
-          "in_frame": 48,
+          "in_frame": 49,
           "position": "below-right",
           "entrance_frames": 3,
-          "out_frame": 81
+          "out_frame": 80
         },
         {
           "layer": "B",
@@ -95,11 +97,11 @@
           "lines": [
             "GUIDANCE"
           ],
-          "in_frame": 57,
+          "in_frame": 58,
           "position": "sky upper third",
           "entrance_frames": 5,
-          "lands_frame": 62,
-          "out_frame": 81
+          "lands_frame": 63,
+          "out_frame": 80
         }
       ],
       "notes": "Behind tall shop building on left (sky key)."
@@ -107,13 +109,13 @@
     {
       "shot": 3,
       "description": "Truck and rider ahead",
-      "edit_in_frame": 81,
-      "edit_out_frame": 117,
-      "duration_frames": 36,
-      "edit_in_tc": "00:00:02:21",
-      "edit_out_tc": "00:00:03:27",
+      "edit_in_frame": 80,
+      "edit_out_frame": 120,
+      "duration_frames": 40,
+      "edit_in_tc": "00:00:02:20",
+      "edit_out_tc": "00:00:04:00",
       "source_in_frame": 147,
-      "source_out_frame": 183,
+      "source_out_frame": 187,
       "source_in_s": 4.9,
       "source_out_s": 6.1,
       "speed_pct": 100,
@@ -124,9 +126,9 @@
           "lines": [
             "starts right here."
           ],
-          "in_frame": 83,
+          "in_frame": 82,
           "position": "subtitle",
-          "out_frame": 117
+          "out_frame": 120
         }
       ],
       "notes": "No hero. Slow push-in 100->106%."
@@ -134,13 +136,13 @@
     {
       "shot": 4,
       "description": "Wide main road, cars, tree canopy",
-      "edit_in_frame": 117,
-      "edit_out_frame": 162,
-      "duration_frames": 45,
-      "edit_in_tc": "00:00:03:27",
-      "edit_out_tc": "00:00:05:12",
+      "edit_in_frame": 120,
+      "edit_out_frame": 160,
+      "duration_frames": 40,
+      "edit_in_tc": "00:00:04:00",
+      "edit_out_tc": "00:00:05:10",
       "source_in_frame": 804,
-      "source_out_frame": 849,
+      "source_out_frame": 844,
       "source_in_s": 26.8,
       "source_out_s": 28.3,
       "speed_pct": 100,
@@ -151,10 +153,10 @@
           "lines": [
             "Here's the"
           ],
-          "in_frame": 119,
+          "in_frame": 122,
           "position": "above-left",
           "entrance_frames": 3,
-          "out_frame": 162
+          "out_frame": 160
         },
         {
           "layer": "B",
@@ -163,11 +165,11 @@
             "EASY",
             "ROUTE"
           ],
-          "in_frame": 131,
+          "in_frame": 134,
           "position": "sky upper third",
           "entrance_frames": 5,
-          "lands_frame": 136,
-          "out_frame": 162
+          "lands_frame": 139,
+          "out_frame": 160
         }
       ],
       "notes": "Tree branches on right overlap the E of ROUTE (sky key)."
@@ -175,11 +177,11 @@
     {
       "shot": 5,
       "description": "Main road under bunting, autos",
-      "edit_in_frame": 162,
-      "edit_out_frame": 210,
+      "edit_in_frame": 160,
+      "edit_out_frame": 208,
       "duration_frames": 48,
-      "edit_in_tc": "00:00:05:12",
-      "edit_out_tc": "00:00:07:00",
+      "edit_in_tc": "00:00:05:10",
+      "edit_out_tc": "00:00:06:28",
       "source_in_frame": 900,
       "source_out_frame": 948,
       "source_in_s": 30.0,
@@ -192,10 +194,10 @@
           "lines": [
             "to"
           ],
-          "in_frame": 164,
+          "in_frame": 162,
           "position": "above-left",
           "entrance_frames": 3,
-          "out_frame": 210
+          "out_frame": 208
         },
         {
           "layer": "C",
@@ -204,11 +206,11 @@
             "SHRI MAA",
             "CHAMUNDA JYOTISH"
           ],
-          "in_frame": 170,
+          "in_frame": 168,
           "position": "sky upper third",
           "entrance_frames": 5,
-          "lands_frame": 175,
-          "out_frame": 210
+          "lands_frame": 173,
+          "out_frame": 208
         }
       ],
       "notes": "Bunting strings keyed over sky, in front of top line."
@@ -216,13 +218,13 @@
     {
       "shot": 6,
       "description": "Maroon barrier with Jodhpur stencil, sandstone building",
-      "edit_in_frame": 210,
-      "edit_out_frame": 243,
-      "duration_frames": 33,
-      "edit_in_tc": "00:00:07:00",
-      "edit_out_tc": "00:00:08:03",
+      "edit_in_frame": 208,
+      "edit_out_frame": 240,
+      "duration_frames": 32,
+      "edit_in_tc": "00:00:06:28",
+      "edit_out_tc": "00:00:08:00",
       "source_in_frame": 693,
-      "source_out_frame": 726,
+      "source_out_frame": 725,
       "source_in_s": 23.1,
       "source_out_s": 24.2,
       "speed_pct": 100,
@@ -233,11 +235,11 @@
           "lines": [
             "JODHPUR"
           ],
-          "in_frame": 216,
+          "in_frame": 214,
           "position": "sky upper third",
           "entrance_frames": 5,
-          "lands_frame": 221,
-          "out_frame": 243
+          "lands_frame": 219,
+          "out_frame": 240
         }
       ],
       "notes": "Behind roofline / tree branches top-right (sky key)."
@@ -245,13 +247,13 @@
     {
       "shot": 7,
       "description": "Roadside shops, wet road, mini-trucks",
-      "edit_in_frame": 243,
-      "edit_out_frame": 285,
-      "duration_frames": 42,
-      "edit_in_tc": "00:00:08:03",
-      "edit_out_tc": "00:00:09:15",
+      "edit_in_frame": 240,
+      "edit_out_frame": 288,
+      "duration_frames": 48,
+      "edit_in_tc": "00:00:08:00",
+      "edit_out_tc": "00:00:09:18",
       "source_in_frame": 354,
-      "source_out_frame": 396,
+      "source_out_frame": 402,
       "source_in_s": 11.8,
       "source_out_s": 13.2,
       "speed_pct": 100,
@@ -262,9 +264,9 @@
           "lines": [
             "From the main market,"
           ],
-          "in_frame": 245,
+          "in_frame": 242,
           "position": "subtitle",
-          "out_frame": 285
+          "out_frame": 288
         }
       ],
       "notes": "No hero."
@@ -272,13 +274,13 @@
     {
       "shot": 8,
       "description": "Petrol pump forecourt, white SUV",
-      "edit_in_frame": 285,
-      "edit_out_frame": 330,
-      "duration_frames": 45,
-      "edit_in_tc": "00:00:09:15",
-      "edit_out_tc": "00:00:11:00",
+      "edit_in_frame": 288,
+      "edit_out_frame": 328,
+      "duration_frames": 40,
+      "edit_in_tc": "00:00:09:18",
+      "edit_out_tc": "00:00:10:28",
       "source_in_frame": 210,
-      "source_out_frame": 255,
+      "source_out_frame": 250,
       "source_in_s": 7.0,
       "source_out_s": 8.5,
       "speed_pct": 100,
@@ -289,10 +291,10 @@
           "lines": [
             "ride past the"
           ],
-          "in_frame": 287,
+          "in_frame": 290,
           "position": "above-left",
           "entrance_frames": 3,
-          "out_frame": 330
+          "out_frame": 328
         },
         {
           "layer": "B",
@@ -301,11 +303,11 @@
             "PETROL",
             "PUMP"
           ],
-          "in_frame": 301,
+          "in_frame": 304,
           "position": "sky upper third",
           "entrance_frames": 5,
-          "lands_frame": 306,
-          "out_frame": 330
+          "lands_frame": 309,
+          "out_frame": 328
         }
       ],
       "notes": "Canopy front edge covers bottom of PUMP; light pole crosses PETROL."
@@ -313,11 +315,11 @@
     {
       "shot": 9,
       "description": "Following rider in blue shirt along divider",
-      "edit_in_frame": 330,
-      "edit_out_frame": 378,
+      "edit_in_frame": 328,
+      "edit_out_frame": 376,
       "duration_frames": 48,
-      "edit_in_tc": "00:00:11:00",
-      "edit_out_tc": "00:00:12:18",
+      "edit_in_tc": "00:00:10:28",
+      "edit_out_tc": "00:00:12:16",
       "source_in_frame": 480,
       "source_out_frame": 528,
       "source_in_s": 16.0,
@@ -330,10 +332,10 @@
           "lines": [
             "keep"
           ],
-          "in_frame": 333,
+          "in_frame": 331,
           "position": "above-left",
           "entrance_frames": 3,
-          "out_frame": 378
+          "out_frame": 376
         },
         {
           "layer": "B",
@@ -341,11 +343,11 @@
           "lines": [
             "STRAIGHT"
           ],
-          "in_frame": 340,
+          "in_frame": 338,
           "position": "upper-mid, bottom tucked behind rider",
           "entrance_frames": 5,
-          "lands_frame": 345,
-          "out_frame": 378
+          "lands_frame": 343,
+          "out_frame": 376
         }
       ],
       "notes": "Behind rider head + shoulders (point-prompt segmentation, tracked) and street-light pole. Source nudged +0.6s from the brief grid so STRAIGHT lands when the rider is centred under the pole."
@@ -353,13 +355,13 @@
     {
       "shot": 10,
       "description": "Bricky Bakers storefront behind divider plants",
-      "edit_in_frame": 378,
-      "edit_out_frame": 417,
-      "duration_frames": 39,
-      "edit_in_tc": "00:00:12:18",
-      "edit_out_tc": "00:00:13:27",
+      "edit_in_frame": 376,
+      "edit_out_frame": 416,
+      "duration_frames": 40,
+      "edit_in_tc": "00:00:12:16",
+      "edit_out_tc": "00:00:13:26",
       "source_in_frame": 726,
-      "source_out_frame": 765,
+      "source_out_frame": 766,
       "source_in_s": 24.2,
       "source_out_s": 25.5,
       "speed_pct": 100,
@@ -370,9 +372,9 @@
           "lines": [
             "past Bricky Bakers."
           ],
-          "in_frame": 380,
+          "in_frame": 378,
           "position": "subtitle",
-          "out_frame": 417
+          "out_frame": 416
         }
       ],
       "notes": "No hero. Store sign stays readable."
@@ -380,13 +382,13 @@
     {
       "shot": 11,
       "description": "Bunting overhead, rider in white shirt, white car",
-      "edit_in_frame": 417,
-      "edit_out_frame": 459,
-      "duration_frames": 42,
-      "edit_in_tc": "00:00:13:27",
-      "edit_out_tc": "00:00:15:09",
+      "edit_in_frame": 416,
+      "edit_out_frame": 456,
+      "duration_frames": 40,
+      "edit_in_tc": "00:00:13:26",
+      "edit_out_tc": "00:00:15:06",
       "source_in_frame": 930,
-      "source_out_frame": 972,
+      "source_out_frame": 970,
       "source_in_s": 31.0,
       "source_out_s": 32.4,
       "speed_pct": 100,
@@ -397,10 +399,10 @@
           "lines": [
             "Follow the"
           ],
-          "in_frame": 419,
+          "in_frame": 418,
           "position": "above-left",
           "entrance_frames": 3,
-          "out_frame": 459
+          "out_frame": 456
         },
         {
           "layer": "B",
@@ -408,11 +410,11 @@
           "lines": [
             "FLAGS"
           ],
-          "in_frame": 429,
+          "in_frame": 428,
           "position": "sky upper third",
           "entrance_frames": 5,
-          "lands_frame": 434,
-          "out_frame": 459
+          "lands_frame": 433,
+          "out_frame": 456
         }
       ],
       "notes": "Bunting in front of letters; rider helmet overlaps bottom."
@@ -420,16 +422,16 @@
     {
       "shot": 12,
       "description": "School gate, ornate iron gate and tree",
-      "edit_in_frame": 459,
-      "edit_out_frame": 495,
-      "duration_frames": 36,
-      "edit_in_tc": "00:00:15:09",
-      "edit_out_tc": "00:00:16:15",
+      "edit_in_frame": 456,
+      "edit_out_frame": 496,
+      "duration_frames": 40,
+      "edit_in_tc": "00:00:15:06",
+      "edit_out_tc": "00:00:16:16",
       "source_in_frame": 1140,
-      "source_out_frame": 1182,
+      "source_out_frame": 1187,
       "source_in_s": 38.0,
       "source_out_s": 39.4,
-      "speed_pct": 117,
+      "speed_pct": 118,
       "text": [
         {
           "layer": "A",
@@ -437,10 +439,10 @@
           "lines": [
             "past the"
           ],
-          "in_frame": 461,
+          "in_frame": 458,
           "position": "above-left",
           "entrance_frames": 3,
-          "out_frame": 495
+          "out_frame": 496
         },
         {
           "layer": "B",
@@ -449,11 +451,11 @@
             "SCHOOL",
             "GATE"
           ],
-          "in_frame": 469,
+          "in_frame": 466,
           "position": "upper third",
           "entrance_frames": 5,
-          "lands_frame": 474,
-          "out_frame": 495
+          "lands_frame": 471,
+          "out_frame": 496
         }
       ],
       "notes": "Leaves in front of top line; gate arch covers bottom of GATE. Source runs 1.4s into 1.2s = 117%."
@@ -461,13 +463,13 @@
     {
       "shot": 13,
       "description": "Turning off main road into colony",
-      "edit_in_frame": 495,
-      "edit_out_frame": 534,
-      "duration_frames": 39,
-      "edit_in_tc": "00:00:16:15",
-      "edit_out_tc": "00:00:17:24",
+      "edit_in_frame": 496,
+      "edit_out_frame": 536,
+      "duration_frames": 40,
+      "edit_in_tc": "00:00:16:16",
+      "edit_out_tc": "00:00:17:26",
       "source_in_frame": 1449,
-      "source_out_frame": 1488,
+      "source_out_frame": 1489,
       "source_in_s": 48.3,
       "source_out_s": 49.6,
       "speed_pct": 100,
@@ -478,9 +480,9 @@
           "lines": [
             "then turn into the"
           ],
-          "in_frame": 497,
+          "in_frame": 498,
           "position": "subtitle",
-          "out_frame": 519
+          "out_frame": 520
         },
         {
           "layer": "B",
@@ -488,11 +490,11 @@
           "lines": [
             "COLONY"
           ],
-          "in_frame": 519,
+          "in_frame": 520,
           "position": "sky upper third",
           "entrance_frames": 5,
-          "lands_frame": 524,
-          "out_frame": 534
+          "lands_frame": 525,
+          "out_frame": 536
         }
       ],
       "notes": "Subtitle removed on the COLONY landing frame. Behind tree + building on left."
@@ -500,13 +502,13 @@
     {
       "shot": 14,
       "description": "Narrow sandstone lane, parked cars",
-      "edit_in_frame": 534,
-      "edit_out_frame": 570,
-      "duration_frames": 36,
-      "edit_in_tc": "00:00:17:24",
-      "edit_out_tc": "00:00:19:00",
+      "edit_in_frame": 536,
+      "edit_out_frame": 568,
+      "duration_frames": 32,
+      "edit_in_tc": "00:00:17:26",
+      "edit_out_tc": "00:00:18:28",
       "source_in_frame": 1710,
-      "source_out_frame": 1746,
+      "source_out_frame": 1742,
       "source_in_s": 57.0,
       "source_out_s": 58.2,
       "speed_pct": 100,
@@ -517,9 +519,9 @@
           "lines": [
             "Through the quiet lanes,"
           ],
-          "in_frame": 536,
+          "in_frame": 538,
           "position": "subtitle",
-          "out_frame": 570
+          "out_frame": 568
         }
       ],
       "notes": "Phrase carries across the cut into shot 15."
@@ -527,13 +529,13 @@
     {
       "shot": 15,
       "description": "Lane with dog crossing, sandstone houses",
-      "edit_in_frame": 570,
-      "edit_out_frame": 606,
-      "duration_frames": 36,
-      "edit_in_tc": "00:00:19:00",
-      "edit_out_tc": "00:00:20:06",
+      "edit_in_frame": 568,
+      "edit_out_frame": 608,
+      "duration_frames": 40,
+      "edit_in_tc": "00:00:18:28",
+      "edit_out_tc": "00:00:20:08",
       "source_in_frame": 1818,
-      "source_out_frame": 1854,
+      "source_out_frame": 1858,
       "source_in_s": 60.6,
       "source_out_s": 61.8,
       "speed_pct": 100,
@@ -544,9 +546,9 @@
           "lines": [
             "Through the quiet lanes,"
           ],
-          "in_frame": 570,
+          "in_frame": 568,
           "position": "subtitle (continued)",
-          "out_frame": 606
+          "out_frame": 608
         }
       ],
       "notes": "Gentle slide feel; stabilise well."
@@ -554,11 +556,11 @@
     {
       "shot": 16,
       "description": "Yellow signboard on pole, red railing",
-      "edit_in_frame": 606,
-      "edit_out_frame": 654,
+      "edit_in_frame": 608,
+      "edit_out_frame": 656,
       "duration_frames": 48,
-      "edit_in_tc": "00:00:20:06",
-      "edit_out_tc": "00:00:21:24",
+      "edit_in_tc": "00:00:20:08",
+      "edit_out_tc": "00:00:21:26",
       "source_in_frame": 1980,
       "source_out_frame": 2028,
       "source_in_s": 66.0,
@@ -571,10 +573,10 @@
           "lines": [
             "look for the"
           ],
-          "in_frame": 608,
+          "in_frame": 610,
           "position": "above-left",
           "entrance_frames": 3,
-          "out_frame": 654
+          "out_frame": 656
         },
         {
           "layer": "B",
@@ -583,11 +585,11 @@
             "YELLOW",
             "SIGN"
           ],
-          "in_frame": 622,
+          "in_frame": 624,
           "position": "upper third",
           "entrance_frames": 5,
-          "lands_frame": 627,
-          "out_frame": 654
+          "lands_frame": 629,
+          "out_frame": 656
         }
       ],
       "notes": "Pole + signboard in front of letters (strongest depth moment)."
@@ -595,13 +597,13 @@
     {
       "shot": 17,
       "description": "Maroon gate, sandstone house",
-      "edit_in_frame": 654,
-      "edit_out_frame": 684,
-      "duration_frames": 30,
-      "edit_in_tc": "00:00:21:24",
-      "edit_out_tc": "00:00:22:24",
+      "edit_in_frame": 656,
+      "edit_out_frame": 688,
+      "duration_frames": 32,
+      "edit_in_tc": "00:00:21:26",
+      "edit_out_tc": "00:00:22:28",
       "source_in_frame": 2067,
-      "source_out_frame": 2097,
+      "source_out_frame": 2099,
       "source_in_s": 68.9,
       "source_out_s": 69.9,
       "speed_pct": 100,
@@ -612,9 +614,9 @@
           "lines": [
             "Red railings,"
           ],
-          "in_frame": 656,
+          "in_frame": 658,
           "position": "subtitle",
-          "out_frame": 684
+          "out_frame": 688
         }
       ],
       "notes": "Maroon boost."
@@ -622,13 +624,13 @@
     {
       "shot": 18,
       "description": "Verandah: railing, plants, WELCOME mat",
-      "edit_in_frame": 684,
-      "edit_out_frame": 726,
-      "duration_frames": 42,
-      "edit_in_tc": "00:00:22:24",
-      "edit_out_tc": "00:00:24:06",
+      "edit_in_frame": 688,
+      "edit_out_frame": 728,
+      "duration_frames": 40,
+      "edit_in_tc": "00:00:22:28",
+      "edit_out_tc": "00:00:24:08",
       "source_in_frame": 2196,
-      "source_out_frame": 2238,
+      "source_out_frame": 2236,
       "source_in_s": 73.2,
       "source_out_s": 74.6,
       "speed_pct": 100,
@@ -639,10 +641,10 @@
           "lines": [
             "a warm"
           ],
-          "in_frame": 686,
+          "in_frame": 690,
           "position": "above-left",
           "entrance_frames": 3,
-          "out_frame": 726
+          "out_frame": 728
         },
         {
           "layer": "B",
@@ -650,11 +652,11 @@
           "lines": [
             "WELCOME"
           ],
-          "in_frame": 694,
+          "in_frame": 698,
           "position": "upper third over roof/wall",
           "entrance_frames": 5,
-          "lands_frame": 699,
-          "out_frame": 726
+          "lands_frame": 703,
+          "out_frame": 728
         }
       ],
       "notes": "Behind hanging plant pots / roof support."
@@ -662,13 +664,13 @@
     {
       "shot": 19,
       "description": "Lattice door opening",
-      "edit_in_frame": 726,
-      "edit_out_frame": 765,
-      "duration_frames": 39,
-      "edit_in_tc": "00:00:24:06",
-      "edit_out_tc": "00:00:25:15",
+      "edit_in_frame": 728,
+      "edit_out_frame": 768,
+      "duration_frames": 40,
+      "edit_in_tc": "00:00:24:08",
+      "edit_out_tc": "00:00:25:18",
       "source_in_frame": 2256,
-      "source_out_frame": 2295,
+      "source_out_frame": 2296,
       "source_in_s": 75.2,
       "source_out_s": 76.5,
       "speed_pct": 100,
@@ -679,10 +681,10 @@
           "lines": [
             "and step"
           ],
-          "in_frame": 728,
+          "in_frame": 730,
           "position": "above-left",
           "entrance_frames": 3,
-          "out_frame": 765
+          "out_frame": 768
         },
         {
           "layer": "B",
@@ -690,11 +692,11 @@
           "lines": [
             "INSIDE"
           ],
-          "in_frame": 738,
+          "in_frame": 740,
           "position": "mid-upper",
           "entrance_frames": 5,
-          "lands_frame": 743,
-          "out_frame": 765
+          "lands_frame": 745,
+          "out_frame": 768
         }
       ],
       "notes": "Door frame + moving lattice door masked; door-creak SFX."
@@ -702,13 +704,13 @@
     {
       "shot": 20,
       "description": "Carved wooden door, entering",
-      "edit_in_frame": 765,
+      "edit_in_frame": 768,
       "edit_out_frame": 792,
-      "duration_frames": 27,
-      "edit_in_tc": "00:00:25:15",
+      "duration_frames": 24,
+      "edit_in_tc": "00:00:25:18",
       "edit_out_tc": "00:00:26:12",
       "source_in_frame": 2310,
-      "source_out_frame": 2337,
+      "source_out_frame": 2334,
       "source_in_s": 77.0,
       "source_out_s": 77.9,
       "speed_pct": 100,
@@ -719,12 +721,12 @@
       "shot": 21,
       "description": "Interior reveal: marble wall, curtains, chairs",
       "edit_in_frame": 792,
-      "edit_out_frame": 837,
-      "duration_frames": 45,
+      "edit_out_frame": 840,
+      "duration_frames": 48,
       "edit_in_tc": "00:00:26:12",
-      "edit_out_tc": "00:00:27:27",
+      "edit_out_tc": "00:00:28:00",
       "source_in_frame": 2346,
-      "source_out_frame": 2391,
+      "source_out_frame": 2394,
       "source_in_s": 78.2,
       "source_out_s": 79.7,
       "speed_pct": 100,
@@ -738,7 +740,7 @@
           "in_frame": 794,
           "position": "above-left",
           "entrance_frames": 3,
-          "out_frame": 837
+          "out_frame": 840
         },
         {
           "layer": "B",
@@ -751,7 +753,7 @@
           "position": "upper wall",
           "entrance_frames": 5,
           "lands_frame": 813,
-          "out_frame": 837
+          "out_frame": 840
         }
       ],
       "notes": "Behind wall lamp and plant on left."
@@ -759,13 +761,13 @@
     {
       "shot": 22,
       "description": "Desk with gold Ganesh idols, certificates",
-      "edit_in_frame": 837,
-      "edit_out_frame": 879,
-      "duration_frames": 42,
-      "edit_in_tc": "00:00:27:27",
-      "edit_out_tc": "00:00:29:09",
+      "edit_in_frame": 840,
+      "edit_out_frame": 880,
+      "duration_frames": 40,
+      "edit_in_tc": "00:00:28:00",
+      "edit_out_tc": "00:00:29:10",
       "source_in_frame": 2448,
-      "source_out_frame": 2490,
+      "source_out_frame": 2488,
       "source_in_s": 81.6,
       "source_out_s": 83.0,
       "speed_pct": 100,
@@ -776,10 +778,10 @@
           "lines": [
             "for your"
           ],
-          "in_frame": 839,
+          "in_frame": 842,
           "position": "above-left",
           "entrance_frames": 3,
-          "out_frame": 879
+          "out_frame": 880
         },
         {
           "layer": "B",
@@ -787,11 +789,11 @@
           "lines": [
             "KUNDLI"
           ],
-          "in_frame": 847,
+          "in_frame": 850,
           "position": "upper wall / lower third",
           "entrance_frames": 5,
-          "lands_frame": 852,
-          "out_frame": 879
+          "lands_frame": 855,
+          "out_frame": 880
         }
       ],
       "notes": "Behind certificate frames / idol shelf."
@@ -799,13 +801,13 @@
     {
       "shot": 23,
       "description": "Desk wider, posters",
-      "edit_in_frame": 879,
-      "edit_out_frame": 915,
-      "duration_frames": 36,
-      "edit_in_tc": "00:00:29:09",
-      "edit_out_tc": "00:00:30:15",
+      "edit_in_frame": 880,
+      "edit_out_frame": 912,
+      "duration_frames": 32,
+      "edit_in_tc": "00:00:29:10",
+      "edit_out_tc": "00:00:30:12",
       "source_in_frame": 2490,
-      "source_out_frame": 2526,
+      "source_out_frame": 2522,
       "source_in_s": 83.0,
       "source_out_s": 84.2,
       "speed_pct": 100,
@@ -816,11 +818,11 @@
           "lines": [
             "CAREER"
           ],
-          "in_frame": 881,
+          "in_frame": 882,
           "position": "upper wall",
           "entrance_frames": 5,
-          "lands_frame": 886,
-          "out_frame": 915
+          "lands_frame": 887,
+          "out_frame": 912
         }
       ],
       "notes": "Behind wall posters on left edge."
@@ -828,13 +830,13 @@
     {
       "shot": 24,
       "description": "Seating with printed cover, brown chairs",
-      "edit_in_frame": 915,
-      "edit_out_frame": 951,
-      "duration_frames": 36,
-      "edit_in_tc": "00:00:30:15",
-      "edit_out_tc": "00:00:31:21",
+      "edit_in_frame": 912,
+      "edit_out_frame": 952,
+      "duration_frames": 40,
+      "edit_in_tc": "00:00:30:12",
+      "edit_out_tc": "00:00:31:22",
       "source_in_frame": 2532,
-      "source_out_frame": 2568,
+      "source_out_frame": 2572,
       "source_in_s": 84.4,
       "source_out_s": 85.6,
       "speed_pct": 100,
@@ -845,10 +847,10 @@
           "lines": [
             "and"
           ],
-          "in_frame": 917,
+          "in_frame": 914,
           "position": "above-left",
           "entrance_frames": 3,
-          "out_frame": 951
+          "out_frame": 952
         },
         {
           "layer": "B",
@@ -856,11 +858,11 @@
           "lines": [
             "FAMILY"
           ],
-          "in_frame": 923,
+          "in_frame": 920,
           "position": "lower third",
           "entrance_frames": 5,
-          "lands_frame": 928,
-          "out_frame": 951
+          "lands_frame": 925,
+          "out_frame": 952
         }
       ],
       "notes": "Chair back overlaps letters."
@@ -868,16 +870,16 @@
     {
       "shot": 25,
       "description": "Exterior hold: house, maroon railings, scooter",
-      "edit_in_frame": 951,
-      "edit_out_frame": 1011,
-      "duration_frames": 60,
-      "edit_in_tc": "00:00:31:21",
-      "edit_out_tc": "00:00:33:21",
+      "edit_in_frame": 952,
+      "edit_out_frame": 1008,
+      "duration_frames": 56,
+      "edit_in_tc": "00:00:31:22",
+      "edit_out_tc": "00:00:33:18",
       "source_in_frame": 2100,
-      "source_out_frame": 2151,
+      "source_out_frame": 2148,
       "source_in_s": 70.0,
       "source_out_s": 71.7,
-      "speed_pct": 85,
+      "speed_pct": 86,
       "text": [
         {
           "layer": "A",
@@ -885,10 +887,10 @@
           "lines": [
             "So"
           ],
-          "in_frame": 953,
+          "in_frame": 954,
           "position": "scattered",
           "entrance_frames": 3,
-          "out_frame": 1011
+          "out_frame": 1008
         },
         {
           "layer": "A",
@@ -896,10 +898,10 @@
           "lines": [
             "your"
           ],
-          "in_frame": 960,
+          "in_frame": 961,
           "position": "scattered",
           "entrance_frames": 3,
-          "out_frame": 1011
+          "out_frame": 1008
         },
         {
           "layer": "A",
@@ -907,10 +909,10 @@
           "lines": [
             "future"
           ],
-          "in_frame": 967,
+          "in_frame": 968,
           "position": "scattered",
           "entrance_frames": 3,
-          "out_frame": 1011
+          "out_frame": 1008
         },
         {
           "layer": "B",
@@ -918,11 +920,11 @@
           "lines": [
             "DESERVES"
           ],
-          "in_frame": 979,
+          "in_frame": 980,
           "position": "sky upper third",
           "entrance_frames": 5,
-          "lands_frame": 984,
-          "out_frame": 1011
+          "lands_frame": 985,
+          "out_frame": 1008
         }
       ],
       "notes": "Behind roof parapet / upper storey. 2.0s hold; source 1.7s at 85% speed."
@@ -930,13 +932,13 @@
     {
       "shot": 26,
       "description": "Interior wide, curtains, warm light",
-      "edit_in_frame": 1011,
+      "edit_in_frame": 1008,
       "edit_out_frame": 1056,
-      "duration_frames": 45,
-      "edit_in_tc": "00:00:33:21",
+      "duration_frames": 48,
+      "edit_in_tc": "00:00:33:18",
       "edit_out_tc": "00:00:35:06",
       "source_in_frame": 2394,
-      "source_out_frame": 2439,
+      "source_out_frame": 2442,
       "source_in_s": 79.8,
       "source_out_s": 81.3,
       "speed_pct": 100,
@@ -947,10 +949,10 @@
           "lines": [
             "CLARITY"
           ],
-          "in_frame": 1014,
+          "in_frame": 1011,
           "position": "upper wall",
           "entrance_frames": 5,
-          "lands_frame": 1019,
+          "lands_frame": 1016,
           "out_frame": 1056
         }
       ],
@@ -1001,10 +1003,10 @@
       "shot": 28,
       "description": "End card: cream silk, logo",
       "edit_in_frame": 1128,
-      "edit_out_frame": 1212,
-      "duration_frames": 84,
+      "edit_out_frame": 1216,
+      "duration_frames": 88,
       "edit_in_tc": "00:00:37:18",
-      "edit_out_tc": "00:00:40:12",
+      "edit_out_tc": "00:00:40:16",
       "text": [
         {
           "layer": "LOGO",
@@ -1014,7 +1016,7 @@
           ],
           "in_frame": 1128,
           "position": "centre",
-          "out_frame": 1212
+          "out_frame": 1216
         }
       ],
       "notes": "Logo 8-frame fade 95->100%. Music last beat on settle."

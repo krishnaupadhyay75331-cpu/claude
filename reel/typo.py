@@ -87,7 +87,7 @@ def shadow(a, opacity, dist, blur):
     return cv2.warpAffine(s, M, (W, H)) * opacity
 
 
-def layout(lines, cx, top, width, fit="width"):
+def layout(lines, cx, top, width, fit="width", align="center"):
     """Per-line ink alphas for a hero block.
 
     fit="width": every line fitted to `width` px (the brief's rule).
@@ -104,7 +104,7 @@ def layout(lines, cx, top, width, fit="width"):
     for i, (txt, em) in enumerate(zip(lines, ems)):
         a, pad = ink(txt, BEBAS, em)
         cap = a.shape[0] - 2 * pad
-        x = cx - (a.shape[1] - 2 * pad) / 2
+        x = cx - (a.shape[1] - 2 * pad) / 2 if align == "center" else cx - width / 2
         out.append((a, pad, x, y, letter_labels(txt, em, a.shape, pad)))
         boxes.append((y, y + cap))
         if i + 1 < len(lines):
@@ -144,14 +144,14 @@ def hidden_fractions(lay, occ):
 
 
 def auto_place(lines, occ, width, cxs, tops, prefer, fit="width", max_hidden=0.30, min_total=0.03,
-               x_safe=(50, W - 140), y_max=1560):
+               x_safe=(50, W - 140), y_max=1560, align="center"):
     """Pick (cx, top) so the occluder clips letters (depth) without erasing any:
     every letter <= max_hidden covered, total coverage >= min_total, block inside
     the Reels safe area, nearest to `prefer`."""
     best = None
     for cx in cxs:
         for top in tops:
-            lay, boxes = layout(lines, cx, top, width, fit)
+            lay, boxes = layout(lines, cx, top, width, fit, align)
             xs = [(x, x + a.shape[1] - 2 * pad) for a, pad, x, _, _ in lay]
             if min(x for x, _ in xs) < x_safe[0] or max(x for _, x in xs) > x_safe[1] or boxes[-1][1] > y_max:
                 continue
@@ -164,9 +164,9 @@ def auto_place(lines, occ, width, cxs, tops, prefer, fit="width", max_hidden=0.3
     return best[1], best[2], best[3]
 
 
-def hero(lines, cx, top, width, kind="gold", progress=1.0, fit="width"):
+def hero(lines, cx, top, width, kind="gold", progress=1.0, fit="width", align="center"):
     """Layer B (gold) or C (brand). Returns (Layer, (x0, y0, x1, y1) of the landed block)."""
-    lay, line_boxes = layout(lines, cx, top, width, fit)
+    lay, line_boxes = layout(lines, cx, top, width, fit, align)
     alphas = [place(a, pad, x, y) for a, pad, x, y, _ in lay]
     A = np.clip(sum(alphas), 0, 1)
     x0 = min(x for _, _, x, _, _ in lay)
@@ -206,6 +206,11 @@ def hero(lines, cx, top, width, kind="gold", progress=1.0, fit="width"):
     # 5-frame entrance: 110% -> 100%, 0 -> 100% opacity, 14 px upward drift
     L.transform(1.10 - 0.10 * p, 14 * (1 - p), min(1, p * 1.25), cx, cy)
     return L, (x0, y0, x1, y1)
+
+
+def small_width(text):
+    a, pad = ink(text, MONT_SB, 78)
+    return a.shape[1] - 2 * pad
 
 
 def small(text, x, y, progress=1.0):

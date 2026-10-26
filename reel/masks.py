@@ -80,3 +80,32 @@ def find_pole_x(rgb, xr=(0.5, 0.9), rows=(0.02, 0.30)):
     band = 1 - sky[int(rows[0] * H):int(rows[1] * H), int(xr[0] * W):int(xr[1] * W)]
     col = cv2.GaussianBlur(band.mean(axis=0, keepdims=True), (0, 0), 1.5)[0]
     return xr[0] + (int(np.argmax(col)) + 0.5) / W
+
+
+def foliage_mask(rgb):
+    """Leaves / trees: green-to-olive hue with texture. Returns float 0..1 (1 = foliage)."""
+    hsv = cv2.cvtColor(rgb.astype(np.float32) / 255, cv2.COLOR_RGB2HSV)
+    h, s, v = hsv[..., 0], hsv[..., 1], hsv[..., 2]
+    g = ((h > 45) & (h < 170) & (s > 0.15) & (v > 0.08)).astype(np.uint8)
+    g = cv2.morphologyEx(g, cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8))
+    g = cv2.morphologyEx(g, cv2.MORPH_OPEN, np.ones((3, 3), np.uint8))
+    return g.astype(np.float32)
+
+
+def track_points(grays, i0, pts):
+    """Lucas-Kanade track normalized points from frame i0 to every frame.
+    Returns list (per frame) of normalized point lists."""
+    H, W = grays[0].shape
+    p0 = np.float32([[x * W, y * H] for x, y in pts]).reshape(-1, 1, 2)
+    out = [None] * len(grays)
+    out[i0] = p0
+    lk = dict(winSize=(31, 31), maxLevel=3,
+              criteria=(cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 30, 0.01))
+    for rng in (range(i0 + 1, len(grays)), range(i0 - 1, -1, -1)):
+        prev = i0
+        for i in rng:
+            p, st, _ = cv2.calcOpticalFlowPyrLK(grays[prev], grays[i], out[prev], None, **lk)
+            # keep a lost point where it was
+            out[i] = np.where(st.reshape(-1, 1, 1) == 1, p, out[prev])
+            prev = i
+    return [[(float(q[0][0]) / W, float(q[0][1]) / H) for q in o] for o in out]

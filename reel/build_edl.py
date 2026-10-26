@@ -9,6 +9,9 @@ import json
 from pathlib import Path
 
 FPS = 30
+# Music bed at 112.5 BPM: one beat = 16 frames. Cuts snap to the half-beat (8 frames).
+BPM = 112.5
+SNAP = 8
 
 # (edit_in, edit_out, src_in, src_out, desc, text cues, occluder/notes)
 # text cue: (layer, text, offset_seconds_from_shot_start, position)
@@ -105,10 +108,16 @@ def f(t):
     return None if t is None else round(t * FPS)
 
 
+def snap(fr):
+    return SNAP * round(fr / SNAP)
+
+
 def build():
     out = []
     for i, (ei, eo, si, so, desc, cues, notes) in enumerate(SHOTS, 1):
-        e_in, e_out = f(ei), f(eo)
+        e_in, e_out = snap(f(ei)), snap(f(eo))
+        if i == len(SHOTS):  # end card: hold to a full bar after the logo settles
+            e_out = 16 * round(f(eo) / 16)
         rec = {
             "shot": i,
             "description": desc,
@@ -119,7 +128,9 @@ def build():
             "edit_out_tc": tc(e_out),
         }
         if si is not None:
-            s_in, s_out = f(si), f(so)
+            # keep the brief's speed for the clip, re-derive the out point after snapping
+            s_in = f(si)
+            s_out = s_in + round((e_out - e_in) * (so - si) / (eo - ei))
             rec.update({
                 "source_in_frame": s_in,
                 "source_out_frame": s_out,
@@ -153,6 +164,8 @@ def build():
     return {
         "project": "Find Us route reel - Shri Maa Chamunda Jyotish, Jodhpur",
         "fps": FPS,
+        "music_bpm": BPM,
+        "frames_per_beat": FPS * 60 / BPM,
         "resolution": [1080, 1920],
         "source": {"file": "route.mov", "probed": "HEVC 550x978, ~28.8 fps VFR, 86.38 s",
                    "conform": "fps=30 (frame duplication, no blending)"},
