@@ -78,8 +78,8 @@ def logo_rgba():
     small = ImageFont.truetype(MONT_L, 25 * S)
     grey = "#6E6A64"
     y = cy + r + 70 * S
-    _tracked(d, W * S / 2, y, "SHRI MAA", name, 400, grey)
-    _tracked(d, W * S / 2, y + 62 * S, "CHAMUNDA JYOTISH", name, 400, grey)
+    _tracked(d, W * S / 2, y, "MAA CHAMUNDA", name, 400, grey)
+    _tracked(d, W * S / 2, y + 62 * S, "JYOTISH", name, 400, grey)
     ty = y + 160 * S
     x0, x1 = _tracked(d, W * S / 2, ty, "ASTROLOGY • KUNDLI • VASTU", small, 200, grey)
     d.line([x0, ty + 44 * S, x1, ty + 44 * S], fill=grey, width=S)

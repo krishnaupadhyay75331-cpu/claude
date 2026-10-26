@@ -29,7 +29,7 @@ SHOTS = [
      [("A", "Here's the", 0.05, "above-left"), ("B", "EASY|ROUTE", 0.45, "sky upper third")],
      "Tree branches on right overlap the E of ROUTE (sky key)."),
     (5.4, 7.0, 30.0, 31.6, "Main road under bunting, autos",
-     [("A", "to", 0.05, "above-left"), ("C", "SHRI MAA|CHAMUNDA JYOTISH", 0.25, "sky upper third")],
+     [("A", "to", 0.05, "above-left"), ("C", "MAA CHAMUNDA|JYOTISH", 0.25, "sky upper third")],
      "Bunting strings keyed over sky, in front of top line."),
     (7.0, 8.1, 23.1, 24.2, "Maroon barrier with Jodhpur stencil, sandstone building",
      [("B", "JODHPUR", 0.20, "sky upper third")],
@@ -96,10 +96,10 @@ SHOTS = [
      [("B", "CLARITY", 0.10, "upper wall")],
      "Behind doorway curtain edge."),
     (35.2, 37.6, 66.4, 68.4, "Signboard again (CTA), 85% speed",
-     [("A", "visit", 0.05, "above-left"), ("C", "SHRI MAA|CHAMUNDA JYOTISH", 0.30, "upper third")],
+     [("A", "visit", 0.05, "above-left"), ("C", "MAA CHAMUNDA|JYOTISH", 0.30, "upper third")],
      "Behind pole. Dissolve to end card over last 8 frames."),
     (37.6, 40.4, None, None, "End card: cream silk, logo",
-     [("LOGO", "placeholder 3-circle logo + SHRI MAA CHAMUNDA JYOTISH + tagline", 0.0, "centre")],
+     [("LOGO", "placeholder 3-circle logo + MAA CHAMUNDA JYOTISH + tagline", 0.0, "centre")],
      "Logo 8-frame fade 95->100%. Music last beat on settle."),
 ]
 
@@ -162,7 +162,7 @@ def build():
         rec["notes"] = notes
         out.append(rec)
     return {
-        "project": "Find Us route reel - Shri Maa Chamunda Jyotish, Jodhpur",
+        "project": "Find Us route reel - Maa Chamunda Jyotish, Jodhpur",
         "fps": FPS,
         "music_bpm": BPM,
         "frames_per_beat": FPS * 60 / BPM,

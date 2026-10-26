@@ -1,5 +1,5 @@
 {
-  "project": "Find Us route reel - Shri Maa Chamunda Jyotish, Jodhpur",
+  "project": "Find Us route reel - Maa Chamunda Jyotish, Jodhpur",
   "fps": 30,
   "music_bpm": 112.5,
   "frames_per_beat": 16.0,
@@ -201,10 +201,10 @@
         },
         {
           "layer": "C",
-          "text": "SHRI MAA / CHAMUNDA JYOTISH",
+          "text": "MAA CHAMUNDA / JYOTISH",
           "lines": [
-            "SHRI MAA",
-            "CHAMUNDA JYOTISH"
+            "MAA CHAMUNDA",
+            "JYOTISH"
           ],
           "in_frame": 168,
           "position": "sky upper third",
@@ -985,10 +985,10 @@
         },
         {
           "layer": "C",
-          "text": "SHRI MAA / CHAMUNDA JYOTISH",
+          "text": "MAA CHAMUNDA / JYOTISH",
           "lines": [
-            "SHRI MAA",
-            "CHAMUNDA JYOTISH"
+            "MAA CHAMUNDA",
+            "JYOTISH"
           ],
           "in_frame": 1065,
           "position": "upper third",
@@ -1010,9 +1010,9 @@
       "text": [
         {
           "layer": "LOGO",
-          "text": "placeholder 3-circle logo + SHRI MAA CHAMUNDA JYOTISH + tagline",
+          "text": "placeholder 3-circle logo + MAA CHAMUNDA JYOTISH + tagline",
           "lines": [
-            "placeholder 3-circle logo + SHRI MAA CHAMUNDA JYOTISH + tagline"
+            "placeholder 3-circle logo + MAA CHAMUNDA JYOTISH + tagline"
           ],
           "in_frame": 1128,
           "position": "centre",

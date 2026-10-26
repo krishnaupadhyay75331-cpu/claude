@@ -20,7 +20,7 @@ LINES = [
     ((2,), "Your path to guidance"),
     ((3,), "starts right here."),
     ((4,), "Here's the easy route"),
-    ((5,), "to Shri Maa Chamunda Jyotish,"),
+    ((5,), "to Maa Chamunda Jyotish,"),
     ((6,), "Jodhpur."),
     ((7,), "From the main market,"),
     ((8,), "ride past the petrol pump,"),
@@ -40,7 +40,7 @@ LINES = [
     ((24,), "and family."),
     ((25,), "So your future deserves"),
     ((26,), "clarity."),
-    ((27,), "Visit Shri Maa Chamunda Jyotish."),
+    ((27,), "Visit Maa Chamunda Jyotish."),
 ]
 
 
