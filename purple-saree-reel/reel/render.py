@@ -784,6 +784,7 @@ def main():
             base = graded[key]
             face = track[min(src_idx, NM - 1)]
             M = frame_affine(shot["frame"], prog, face, push=tuple(shot.get("push", (1.02, 1.06))))
+            M[1, 2] += shot.get("shift_y", 0.0) * H  # headroom for a top title
             extra = 1.0
             # freeze push-in
             if t >= AROLL_END:

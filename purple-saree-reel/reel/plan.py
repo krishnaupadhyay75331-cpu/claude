@@ -51,7 +51,7 @@ SHOTS = [
     dict(type="aroll", frame="close", t0=36.40, t1=mid(39.27, 39.94), out="hard"),
     dict(type="broll", n=5, t0=mid(39.27, 39.94), t1=41.02, drift=20, out="hard"),
     dict(type="broll", n=6, t0=41.02, t1=mid(47.16, 47.52), drift=-20, out="flare"),
-    dict(type="aroll", frame="wide", t0=mid(47.16, 47.52), t1=REFRAME, push=(1.0, 1.03), out="burn"),
+    dict(type="aroll", frame="wide", t0=mid(47.16, 47.52), t1=REFRAME, push=(1.0, 1.03), shift_y=0.06, out="burn"),
     dict(type="broll", n=7, t0=REFRAME, t1=mid(54.27, 54.41), drift=30, out="bokeh"),
     dict(type="aroll", frame="tight", t0=mid(54.27, 54.41), t1="END", push=(1.05, 1.08)),
 ]
@@ -152,8 +152,8 @@ EVENTS = [
     # B-roll #6 callout tags with the values she names
     dict(kind="tags", t=45.10, t_end=47.16, tags=[("Samman · Samay", 0.42, (0.62, 0.60)), ("Izzat · Pyaar", 0.49, (0.66, 0.63))]),
     # S13: stat-style title (no number spoken -> her strongest claim word) + gold script + pill
-    dict(kind="stat", t=w("barabari", 49.21), t_end=51.29, text="BARABARI", y=0.085, size=300),
-    dict(kind="words", t=w("pyaar", 48.87), t_end=51.29, style="script", size=84, y=0.15, rgb=(247, 223, 160),
+    dict(kind="stat", t=w("barabari", 49.21), t_end=51.29, text="BARABARI", y=0.0, size=250),
+    dict(kind="words", t=w("pyaar", 48.87), t_end=51.29, style="script", size=70, y=0.107, rgb=(247, 223, 160),
          words=[("pyaar", w("pyaar", 48.87)), ("aur", w("aur", 49.03))]),
     dict(kind="pill", t=w("ek", 50.19), t_end=51.29, text="ek acchi misaal", y=0.70, size=52,
          wipe_until=w("misaal", 50.72) + 0.12),
