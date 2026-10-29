@@ -774,7 +774,9 @@ def render(n):
             if pmask is None:
                 screen(img, h, np.ones(h.shape[:2], np.float32), int(OW / 2 - hh / 2), int(760 - hh / 2), op)
             else:   # orb sits behind the client: centre it on her head, then restore her over it
-                ys, xs = np.where(pmask > .5)
+                nl, lab, st, _ = cv2.connectedComponentsWithStats((pmask > .5).astype(np.uint8))
+                big = 1 + int(np.argmax(st[1:, cv2.CC_STAT_AREA])) if nl > 1 else 0   # ignore people in wall art etc.
+                ys, xs = np.where(lab == big) if big else (np.array([]), np.array([]))
                 hx, hy = (xs.mean(), ys.min() + 140) if len(ys) else (OW / 2, 760)
                 person = img.copy()
                 screen(img, h, np.ones(h.shape[:2], np.float32), int(hx - hh / 2), int(hy - hh / 2), op)
