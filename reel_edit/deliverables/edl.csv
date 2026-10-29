@@ -1,36 +1,22 @@
 tc_in,tc_out,layer,asset,motion/params,effect
-00:00:00:00,00:00:36:02,A1 voice,tightened src audio,"afftdn, HPF 80Hz, +2dB@3.5k, de-ess, comp 3.5:1 @-18dB",master -14 LUFS / TP -1.5 dBTP
-00:00:00:00,00:00:36:02,A2 music,synth piano + pad 72 BPM,Am-F-C-G; lift at pills; swell at S6; C resolve at CTA,"-12 dB under voice, -4 dB sidechain duck"
-00:00:00:00,00:00:01:27,V2 B-roll,assets/S1.png,"Ken Burns scale 1.00->1.12, dx -60->50, dy 0->-20",neon rose-gold '?' flicker 0/100/30/100 then 1.5s pulse
+00:00:00:00,00:00:35:18,A1 voice,tightened src audio,"afftdn, HPF 80Hz, +2dB@3.5k, de-ess, comp 3.5:1 @-18dB",master -14 LUFS / TP -1.5 dBTP
+00:00:00:00,00:00:35:18,A2 music,synth piano + pad 72 BPM,Am-F-C-G; lift at pills; swell at S6; C resolve at CTA,"-12 dB under voice, -4 dB sidechain duck"
+00:00:00:00,00:00:01:27,V1 A-roll,src.mov 0.400-2.300s,MEDIUM,"scale 122->126%, centre on face (0.54,0.507), eyes on upper third; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
 00:00:00:01,00:00:00:23,V4 caption,Kya,h1: aapke mind mein bhi | h2: ,gradient hero
-00:00:00:08,,A3 SFX,neon buzz/flicker,,
 00:00:00:23,00:00:01:05,V4 caption,Shaadi,h1:  | h2: ,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
 00:00:01:05,00:00:01:23,V4 caption,Career,h1:  | h2: ,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
-00:00:01:21,,A3 SFX,whoosh+shimmer (std),,
-00:00:01:21,00:00:02:03,V5 transition,std,12 frames,"rose/sage/gold bokeh bloom f1-4 (+1.5 stops), cream #FFF6EC hold f5-9, fade-up f10-12"
 00:00:01:23,00:00:02:17,V4 caption,Future,h1: ya | h2: ko lekar,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
-00:00:01:27,00:00:03:12,V1 A-roll,src.mov 2.300-3.800s,WIDE,"scale 100->104% ease-in-out push, centre (0.50,0.50); card A: B&W couple cut-out behind subject (85%, blur 2px), neon '?' at (625,465), rose tint flash 2f; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
+00:00:01:27,00:00:03:12,V1 A-roll,src.mov 2.300-3.800s,WIDE,"scale 100->104% ease-in-out push, centre (0.50,0.50); neon rose-gold '?' at (625,465), flicker 0/100/30/100 then 1.5s pulse, rose tint flash 2f; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
 00:00:02:03,,A3 SFX,neon buzz/flicker,,
 00:00:02:17,00:00:03:13,V4 caption,Sawaal,h1: koi aisa | h2: hai,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
-00:00:03:06,,A3 SFX,whoosh+shimmer (std),,
-00:00:03:06,00:00:03:18,V5 transition,std,12 frames,"rose/sage/gold bokeh bloom f1-4 (+1.5 stops), cream #FFF6EC hold f5-9, fade-up f10-12"
-00:00:03:12,00:00:05:09,V2 B-roll,assets/S2.png,"Ken Burns scale 1.00->1.08, dx 0->0, dy 0->0",cloud thought bubble pop 0->110->100% (10f) + glass cube drift
+00:00:03:12,00:00:05:06,V1 A-roll,src.mov 3.800-5.600s,CLOSE,"scale 132->136%, face left of centre (0.57,0.515), bg blur sigma 8 via person matte; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
 00:00:03:13,00:00:04:19,V4 caption,Jawab,h1: jiska | h2: aap kaafi time se,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
-00:00:03:18,,A3 SFX,thought-bubble pop,,
-00:00:04:19,00:00:05:10,V4 caption,Dhoondh,h1:  | h2: rahe ho,caption stays over bokeh (var1)
-00:00:05:03,,A3 SFX,whoosh+shimmer (var1),,
-00:00:05:03,00:00:05:15,V5 transition,var1,12 frames,"standard bokeh flash, caption 'Dhoondh / rahe ho' stays on top"
-00:00:05:09,00:00:06:11,V2 B-roll,assets/S4.png,"Ken Burns scale 1.00->1.05, dx 0->0, dy 0->0","halo orb pulse 100<->106%, 70<->95% opacity, 1.8s"
-00:00:05:10,00:00:06:11,V4 caption,Zaroorat,h1: kabhi kabhi | h2: hoti hai,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
-00:00:06:05,,A3 SFX,whoosh+shimmer (std),,
-00:00:06:05,00:00:06:17,V5 transition,std,12 frames,"rose/sage/gold bokeh bloom f1-4 (+1.5 stops), cream #FFF6EC hold f5-9, fade-up f10-12"
+00:00:04:19,00:00:05:10,V4 caption,Dhoondh,h1:  | h2: rahe ho,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
+00:00:05:06,00:00:06:11,V1 A-roll,src.mov 5.767-6.933s,MEDIUM,"scale 122->126%, centre on face (0.54,0.507), eyes on upper third; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
+00:00:05:10,00:00:07:13,V4 caption,Zaroorat,h1: kabhi kabhi | h2: hoti hai,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
 00:00:06:11,00:00:07:12,V1 A-roll,src.mov 6.933-7.967s,CLOSE,"scale 132->136%, face left of centre (0.57,0.515), bg blur sigma 8 via person matte; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
-00:00:07:06,,A3 SFX,whoosh+shimmer (std),,
-00:00:07:06,00:00:07:18,V5 transition,std,12 frames,"rose/sage/gold bokeh bloom f1-4 (+1.5 stops), cream #FFF6EC hold f5-9, fade-up f10-12"
-00:00:07:12,00:00:09:12,V2 B-roll,assets/S3.png,"Ken Burns scale 1.04->1.06, dx 0->0, dy -110->110",antique-gold light leak sweep -> gold/cream white-out
+00:00:07:12,00:00:09:12,V1 A-roll,src.mov 7.967-9.967s,WIDE,"scale 100->104% ease-in-out push, centre (0.50,0.50); grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
 00:00:07:13,00:00:09:13,V4 caption,Perspective,h1: ek naye | h2: se samajhne ki,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
-00:00:09:06,,A3 SFX,whoosh+shimmer (burn),,
-00:00:09:06,00:00:09:18,V5 transition,burn,12 frames,golden film-burn: gold #F1D58C -> cream white-out
 00:00:09:12,00:00:11:23,V1 A-roll,src.mov 9.967-12.333s,MEDIUM,"scale 122->126%, centre on face (0.54,0.507), eyes on upper third; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
 00:00:09:13,00:00:10:22,V4 caption,Mil,h1: jiske liye aap | h2: sakte hain,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
 00:00:10:22,,A3 SFX,whoosh-hit (snap zoom),,
@@ -41,17 +27,13 @@ tc_in,tc_out,layer,asset,motion/params,effect
 00:00:13:02,00:00:13:06,V1 snap zoom,,+8% over 4f ease-out,whoosh-hit SFX
 00:00:13:06,,A3 SFX,gold sparkle shimmer,,
 00:00:14:11,00:00:14:29,V1 A-roll,src.mov 15.033-15.633s,CLOSE,"scale 132->136%, face left of centre (0.57,0.515), bg blur sigma 8 via person matte; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
-00:00:14:23,,A3 SFX,whoosh+shimmer (std),,
-00:00:14:23,00:00:15:05,V5 transition,std,12 frames,"rose/sage/gold bokeh bloom f1-4 (+1.5 stops), cream #FFF6EC hold f5-9, fade-up f10-12"
-00:00:14:29,00:00:17:05,V2 B-roll,assets/S5a.png,"Ken Burns scale 1.00->1.10, dx 0->0, dy 0->0","pills (Kundli Vishleshan, Face Reading)"
+00:00:14:29,00:00:17:05,V1 A-roll,src.mov 15.633-17.833s,MEDIUM,"scale 122->126%, centre on face (0.54,0.507), eyes on upper third; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
 00:00:15:04,,A3 SFX,typewriter ticks: Kundli Vishleshan,,
 00:00:16:14,,A3 SFX,typewriter ticks: Face Reading,,
-00:00:17:05,00:00:19:25,V2 B-roll,assets/S5b.png,"Ken Burns scale 1.04->1.06, dx -80->80, dy 0->0","pills (Prashna Kundli, Vastu)"
+00:00:17:05,00:00:19:25,V1 A-roll,src.mov 18.067-20.733s,WIDE,"scale 100->104% ease-in-out push, centre (0.50,0.50); grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
 00:00:17:13,,A3 SFX,typewriter ticks: Prashna Kundli,,
 00:00:18:15,,A3 SFX,typewriter ticks: Vastu,,
 00:00:18:22,00:00:19:25,V4 caption,Guidance,h1: se related | h2: chahiye,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
-00:00:19:19,,A3 SFX,whoosh+shimmer (flare),,
-00:00:19:19,00:00:20:01,V5 transition,flare,12 frames,single cream bokeh flare sweep L->R
 00:00:19:25,00:00:21:26,V1 A-roll,src.mov 20.733-22.767s,MEDIUM,"scale 122->126%, centre on face (0.54,0.507), eyes on upper third; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
 00:00:19:26,00:00:20:29,V4 caption,Maa Chamunda,h1:  | h2: Jyotish mein,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
 00:00:20:29,00:00:21:27,V4 caption,Zaroorat,h1: aap apni | h2: ke,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
@@ -59,23 +41,22 @@ tc_in,tc_out,layer,asset,motion/params,effect
 00:00:21:27,00:00:24:07,V4 caption,Consultation,h1: according | h2: ke baare mein jaan sakte hain,letter-by-letter
 00:00:24:06,00:00:26:05,V1 A-roll,src.mov 25.100-27.067s,CLOSE,"scale 132->136%, face left of centre (0.57,0.515), bg blur sigma 8 via person matte; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
 00:00:24:07,00:00:26:05,V4 caption,Consultation,h1: agar aap bhi | h2: lena chahte hain,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
+00:00:25:29,,A3 SFX,whoosh+shimmer (std),,
+00:00:25:29,00:00:26:11,V5 transition,std,12 frames,"rose/sage/gold bokeh bloom f1-4 (+1.5 stops), cream #FFF6EC hold f5-9, fade-up f10-12"
 00:00:26:05,00:00:28:13,V1 A-roll,src.mov 27.067-29.333s,MEDIUM,"scale 122->126%, centre on face (0.54,0.507), eyes on upper third; CTA quote 66px + rose pill 'consultation'; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
 00:00:26:19,,A3 SFX,whoosh-hit (snap zoom),,
 00:00:26:19,00:00:26:23,V1 snap zoom,,+8% over 4f ease-out,whoosh-hit SFX
 00:00:27:06,,A3 SFX,typewriter ticks: consultation,,
-00:00:28:06,,A3 SFX,riser into happy ending,,
 00:00:28:13,00:00:30:00,V1 A-roll,src.mov 29.333-30.900s,WIDE,"scale 100->104% ease-in-out push, centre (0.50,0.50); grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
 00:00:28:14,00:00:30:01,V4 caption,Appointment,h1: hamari team aapko | h2: aur,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
-00:00:29:24,,A3 SFX,whoosh+shimmer (std),,
-00:00:29:24,00:00:30:06,V5 transition,std,12 frames,"rose/sage/gold bokeh bloom f1-4 (+1.5 stops), cream #FFF6EC hold f5-9, fade-up f10-12"
-00:00:30:00,00:00:32:26,V2 B-roll,assets/S6.png or S6.mp4,"Ken Burns scale 1.02->1.08, dx 0->30, dy 0->0","opens on gold flare, rose/sage/gold bokeh, music swell"
+00:00:30:00,00:00:32:12,V1 A-roll,src.mov 30.900-33.300s,CLOSE,"scale 132->136%, face left of centre (0.57,0.515), bg blur sigma 8 via person matte; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
 00:00:30:01,00:00:31:12,V4 caption,Process,h1: consultation | h2: ki poori,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
-00:00:31:12,00:00:32:27,V4 caption,Details,h1:  | h2: share kar degi,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
-00:00:32:20,,A3 SFX,whoosh+shimmer (std),,
-00:00:32:20,00:00:33:02,V5 transition,std,12 frames,"rose/sage/gold bokeh bloom f1-4 (+1.5 stops), cream #FFF6EC hold f5-9, fade-up f10-12"
-00:00:32:26,00:00:33:27,V1 A-roll,src.mov 34.033-35.067s,MEDIUM,"scale 122->126%, centre on face (0.54,0.507), eyes on upper third; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
-00:00:32:27,00:00:33:28,V4 caption,Maa Chamunda,h1:  | h2: Jyotish,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
-00:00:32:29,,A3 SFX,CTA pill,,
-00:00:33:27,00:00:36:02,V1 A-roll,src.mov 35.067-37.233s,CLOSE,"scale 132->136%, face left of centre (0.57,0.515), bg blur sigma 8 via person matte; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
-00:00:33:28,00:00:35:07,V4 caption,Sawaal,h1: aapke | h2: ko samajhne ki,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
-00:00:35:07,00:00:36:02,V4 caption,Shuruaat,h1: ek nayi | h2: ,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
+00:00:31:12,00:00:32:13,V4 caption,Details,h1:  | h2: share kar degi,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
+00:00:32:06,,A3 SFX,whoosh+shimmer (std),,
+00:00:32:06,00:00:32:18,V5 transition,std,12 frames,"rose/sage/gold bokeh bloom f1-4 (+1.5 stops), cream #FFF6EC hold f5-9, fade-up f10-12"
+00:00:32:12,00:00:33:13,V1 A-roll,src.mov 34.033-35.067s,MEDIUM,"scale 122->126%, centre on face (0.54,0.507), eyes on upper third; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
+00:00:32:13,00:00:33:14,V4 caption,Maa Chamunda,h1:  | h2: Jyotish,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
+00:00:32:15,,A3 SFX,CTA pill,,
+00:00:33:13,00:00:35:18,V1 A-roll,src.mov 35.067-37.233s,CLOSE,"scale 132->136%, face left of centre (0.57,0.515), bg blur sigma 8 via person matte; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"
+00:00:33:14,00:00:34:23,V4 caption,Sawaal,h1: aapke | h2: ko samajhne ki,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"
+00:00:34:23,00:00:35:18,V4 caption,Shuruaat,h1: ek nayi | h2: ,"word pop: opacity 0->100, blur 12->0, scale 105->100 over 6f"

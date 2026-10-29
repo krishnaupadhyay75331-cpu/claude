@@ -27,7 +27,7 @@ jiska Jawab aap kaafi time se
 Dhoondh rahe ho
 
 8
-00:00:05,333 --> 00:00:06,367
+00:00:05,333 --> 00:00:07,433
 kabhi kabhi Zaroorat hoti hai
 
 9
@@ -83,22 +83,22 @@ hamari team aapko Appointment aur
 consultation Process ki poori
 
 22
-00:00:31,400 --> 00:00:32,900
+00:00:31,400 --> 00:00:32,433
 Details share kar degi
 
 23
-00:00:32,900 --> 00:00:33,933
+00:00:32,433 --> 00:00:33,467
 Maa Chamunda Jyotish
 
 24
-00:00:32,967 --> 00:00:36,067
+00:00:32,500 --> 00:00:35,600
 pill: DM “consultation”
 
 25
-00:00:33,933 --> 00:00:35,233
+00:00:33,467 --> 00:00:34,767
 aapke Sawaal ko samajhne ki
 
 26
-00:00:35,233 --> 00:00:36,067
+00:00:34,767 --> 00:00:35,600
 ek nayi Shuruaat
 

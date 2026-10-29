@@ -1,27 +1,27 @@
 phrase,start_s,end_s,start_frame,end_frame,hero,helper_above_right,helper_below_left,special,shot
-1,0.03,0.77,1,23,Kya,aapke mind mein bhi,,gradient hero,B-roll S1
-2,0.77,1.17,23,35,Shaadi,,,,B-roll S1
-3,1.17,1.77,35,53,Career,,,,B-roll S1
-4,1.77,2.57,53,77,Future,ya,ko lekar,,B-roll S1
+1,0.03,0.77,1,23,Kya,aapke mind mein bhi,,gradient hero,expert MEDIUM
+2,0.77,1.17,23,35,Shaadi,,,,expert MEDIUM
+3,1.17,1.77,35,53,Career,,,,expert MEDIUM
+4,1.77,2.57,53,77,Future,ya,ko lekar,,expert MEDIUM
 5,2.57,3.43,77,103,Sawaal,koi aisa,hai,,expert WIDE
-6,3.43,4.63,103,139,Jawab,jiska,aap kaafi time se,,B-roll S2
-7,4.63,5.33,139,160,Dhoondh,,rahe ho,caption stays over bokeh (var1),B-roll S2
-8,5.33,6.37,160,191,Zaroorat,kabhi kabhi,hoti hai,,B-roll S4
-9,7.43,9.43,223,283,Perspective,ek naye,se samajhne ki,,B-roll S3
+6,3.43,4.63,103,139,Jawab,jiska,aap kaafi time se,,expert CLOSE
+7,4.63,5.33,139,160,Dhoondh,,rahe ho,,expert CLOSE
+8,5.33,7.43,160,223,Zaroorat,kabhi kabhi,hoti hai,,expert MEDIUM
+9,7.43,9.43,223,283,Perspective,ek naye,se samajhne ki,,expert WIDE
 10,9.43,10.73,283,322,Mil,jiske liye aap,sakte hain,,expert MEDIUM
 11,10.73,11.77,322,353,Pushpa ji,,se,,expert MEDIUM
 C,11.77,14.37,353,431,21 SAAL (card C),Jyotish ki field mein (script),ka experience (script),text-behind-subject credibility card,expert WIDE
-P,15.00,19.83,450,595,pills,Kundli Vishleshan · Face Reading,Prashna Kundli · Vastu,"pills, typewriter",B-roll S5a
-12,18.73,19.83,562,595,Guidance,se related,chahiye,,B-roll S5b
+P,15.00,19.83,450,595,pills,Kundli Vishleshan · Face Reading,Prashna Kundli · Vastu,"pills, typewriter",expert MEDIUM
+12,18.73,19.83,562,595,Guidance,se related,chahiye,,expert WIDE
 13,19.87,20.97,596,629,Maa Chamunda,,Jyotish mein,,expert MEDIUM
 14,20.97,21.90,629,657,Zaroorat,aap apni,ke,,expert MEDIUM
 15,21.90,24.23,657,727,Consultation,according,ke baare mein jaan sakte hain,letter-by-letter,expert WIDE
 16,24.23,26.17,727,785,Consultation,agar aap bhi,lena chahte hain,,expert CLOSE
 CTA,26.20,28.43,786,853,“DM mein likhkar bhejiye”,toh abhi hume,pill: consultation,CTA quote + pill,expert MEDIUM
 17,28.47,30.03,854,901,Appointment,hamari team aapko,aur,,expert WIDE
-18,30.03,31.40,901,942,Process,consultation,ki poori,,B-roll S6
-19,31.40,32.90,942,987,Details,,share kar degi,,B-roll S6
-20,32.90,33.93,987,1018,Maa Chamunda,,Jyotish,,expert MEDIUM
-CTA2,32.97,36.07,989,1082,pill: DM “consultation”,,,persistent CTA pill + gold chevron (last 0.6 s),expert MEDIUM
-21,33.93,35.23,1018,1057,Sawaal,aapke,ko samajhne ki,,expert CLOSE
-22,35.23,36.07,1057,1082,Shuruaat,ek nayi,,,expert CLOSE
+18,30.03,31.40,901,942,Process,consultation,ki poori,,expert CLOSE
+19,31.40,32.43,942,973,Details,,share kar degi,,expert CLOSE
+20,32.43,33.47,973,1004,Maa Chamunda,,Jyotish,,expert MEDIUM
+CTA2,32.50,35.60,975,1068,pill: DM “consultation”,,,persistent CTA pill + gold chevron (last 0.6 s),expert MEDIUM
+21,33.47,34.77,1004,1043,Sawaal,aapke,ko samajhne ki,,expert CLOSE
+22,34.77,35.60,1043,1068,Shuruaat,ek nayi,,,expert CLOSE
