@@ -14,7 +14,7 @@ def srt_t(f):
 def sec(f): return f"{f / FPS:.2f}"
 
 shot_name = {"WIDE": "expert WIDE", "MEDIUM": "expert MEDIUM", "CLOSE": "expert CLOSE"}
-def shot_of(f): k = R.shot_at(f)[2]; return shot_name.get(k, f"B-roll {k}")
+def shot_of(f): return shot_name[R.shot_at(f)[2]]
 
 rows = R.caption_rows()
 extra = [dict(n="C", start=R.c8, end=R.c9, hero="21 SAAL (card C)", h1="Jyotish ki field mein (script)", h2="ka experience (script)", special="text-behind-subject credibility card"),
@@ -40,20 +40,12 @@ for a, b, k, ex in R.SHOTS:
     if k in R.FR:
         src0 = R.SRC_IDX[a] / FPS; src1 = (R.SRC_IDX[b - 1] + 1) / FPS
         note = FRDESC[k]
-        if ex.get("cardA"): note += "; card A: B&W couple cut-out behind subject (85%, blur 2px), neon '?' at (625,465), rose tint flash 2f"
+        if ex.get("neon"): note += "; neon rose-gold '?' at (625,465), flicker 0/100/30/100 then 1.5s pulse, rose tint flash 2f"
         if ex.get("cardC"): note += "; card C: '21 SAAL' Antonio Thin 400px x0.86, warm white 95%, behind subject matte, rises 40px/10f"
         if ex.get("cta"): note += "; CTA quote 66px + rose pill 'consultation'"
         edl.append([tc(a), tc(b), "V1 A-roll", f"src.mov {src0:.3f}-{src1:.3f}s", k, note + "; grade: rose-and-sage LUT, sat +8%, vignette 15%, walnut gradient bottom 35%"])
-    else:
-        kb = R.KB[k]
-        fx = {"S1": "neon rose-gold '?' flicker 0/100/30/100 then 1.5s pulse", "S2": "cloud thought bubble pop 0->110->100% (10f) + glass cube drift",
-              "S3": "antique-gold light leak sweep -> gold/cream white-out", "S4": "halo orb pulse 100<->106%, 70<->95% opacity, 1.8s",
-              "S5a": "pills (Kundli Vishleshan, Face Reading)", "S5b": "pills (Prashna Kundli, Vastu)", "S6": "opens on gold flare, rose/sage/gold bokeh, music swell"}[k]
-        edl.append([tc(a), tc(b), "V2 B-roll", f"assets/{k}.png" + (" or S6.mp4" if k == "S6" else ""), f"Ken Burns scale {kb[0]:.2f}->{kb[1]:.2f}, dx {kb[2]}->{kb[3]}, dy {kb[4]}->{kb[5]}", fx])
 for c, kind in R.TRANS:
-    d = {"std": "rose/sage/gold bokeh bloom f1-4 (+1.5 stops), cream #FFF6EC hold f5-9, fade-up f10-12",
-         "var1": "standard bokeh flash, caption 'Dhoondh / rahe ho' stays on top",
-         "burn": "golden film-burn: gold #F1D58C -> cream white-out", "flare": "single cream bokeh flare sweep L->R"}[kind]
+    d = "rose/sage/gold bokeh bloom f1-4 (+1.5 stops), cream #FFF6EC hold f5-9, fade-up f10-12"
     edl.append([tc(c - 6), tc(c + 6), "V5 transition", kind, "12 frames", d])
 for s in R.SNAPS: edl.append([tc(s), tc(s + 4), "V1 snap zoom", "", "+8% over 4f ease-out", "whoosh-hit SFX"])
 for r in rows:

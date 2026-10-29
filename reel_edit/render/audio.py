@@ -65,7 +65,7 @@ def midi_hz(m): return 440 * 2 ** ((m - 69) / 12)
 CH = {"Am": [57, 60, 64], "F": [53, 57, 60], "C": [48, 52, 55], "G": [55, 59, 62], "Fadd9": [53, 57, 60, 67], "Cmaj": [48, 55, 60, 64]}
 bar = 60 / 72 * 4
 lift_t = R.OF[61] / FPS          # B5 method/solution starts (pills)
-swell_t = R.c17 / FPS            # B7 happy ending
+swell_t = R.c17 / FPS            # warm swell under "consultation process ... details"
 resolve_t = R.c18 / FPS          # B8 CTA
 prog = []
 t = 0.0
@@ -140,7 +140,7 @@ irL[:int(.012 * SR)] = 0; irR[:int(.017 * SR)] = 0
 wet = np.stack([fftconvolve(music[:, 0], irL)[:NS], fftconvolve(music[:, 1], irR)[:NS]], 1)
 wet /= np.max(np.abs(wet)) + 1e-9
 music = music / (np.max(np.abs(music)) + 1e-9) * .7 + wet * .45
-# arc: swell into the happy ending, hard stop at the last frame (10 ms de-click)
+# arc: swell before the CTA close, hard stop at the last frame (10 ms de-click)
 arc = np.ones(NS, np.float32)
 sw = (t_all >= swell_t - 1.5) & (t_all < resolve_t)
 arc[sw] = 1 + .9 * np.clip((t_all[sw] - (swell_t - 1.5)) / 1.5, 0, 1)
@@ -168,10 +168,6 @@ def shimmer(d=.9):
     x = sum(np.sin(2 * np.pi * f * tt + rng.uniform(0, 6)) * (1 + .5 * np.sin(2 * np.pi * rng.uniform(9, 15) * tt)) for f in (2637, 3136, 3951, 4699, 5274))
     env = np.exp(-tt * 3.2) * np.clip(tt / .03, 0, 1)
     return (x * env / 5).astype(np.float32)
-def pop():
-    n = int(.12 * SR); tt = np.arange(n) / SR
-    f = 900 * np.exp(-tt * 25) + 180
-    return (np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt * 38)).astype(np.float32)
 def tick():
     n = int(.03 * SR); tt = np.arange(n) / SR
     return (bp_noise(n, 2500, 7000) * np.exp(-tt * 250)).astype(np.float32)
@@ -189,11 +185,6 @@ def hit():
     n = int(.35 * SR); tt = np.arange(n) / SR
     th = np.sin(2 * np.pi * np.cumsum(80 * np.exp(-tt * 9) + 45) / SR) * np.exp(-tt * 11)
     return (th * .9 + np.pad(whoosh(.25), (0, n - int(.25 * SR))) * .6).astype(np.float32)
-def riser(d=1.6):
-    n = int(d * SR); tt = np.arange(n) / SR
-    f = 200 * (1 + 6 * (tt / d) ** 2)
-    x = np.sin(2 * np.pi * np.cumsum(f) / SR) * .4 + bp_noise(n, 800, 8000) * .5 * (tt / d)
-    return (x * (tt / d) ** 2).astype(np.float32)
 
 sfx = np.zeros((NS, 2), np.float32)
 ref = 10 ** (vdb / 20)
@@ -203,12 +194,9 @@ def add(x, frame, db, pan=0.0):
 events = []
 for c, kind in R.TRANS:
     add(whoosh(), c - 6, -8, -.2); add(shimmer(), c, -14, .2); events.append((c - 6, f"whoosh+shimmer ({kind})"))
-for (n0, sz) in ((R.c1 * 0 + 8, 0), (R.c1 + 6, 0)):   # neon "?" flicker-on (S1 and card A)
-    add(buzz(.9), n0, -18, .1); events.append((n0, "neon buzz/flicker"))
-add(pop(), R.c2 + 6, -10, -.3); events.append((R.c2 + 6, "thought-bubble pop"))
+add(buzz(.9), R.c1 + 6, -18, .1); events.append((R.c1 + 6, "neon buzz/flicker"))
 for s in R.SNAPS: add(hit(), s, -10); events.append((s, "whoosh-hit (snap zoom)"))
 add(shimmer(1.1), R.OF[54] + 4, -12, .3); events.append((R.OF[54] + 4, "gold sparkle shimmer"))
-add(riser(1.6), R.c17 - 6 - 48, -12); events.append((R.c17 - 54, "riser into happy ending"))
 pill_words = [(61, "Kundli Vishleshan"), (63, "Face Reading"), (65, "Prashna Kundli"), (68, "Vastu"), (101, "consultation")]
 for wi, text in pill_words:
     for k in range(len(text)):

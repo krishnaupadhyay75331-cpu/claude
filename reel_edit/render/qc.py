@@ -1,6 +1,5 @@
 """Automated QC for the finished reel. Usage: python3 qc.py <workdir> <final.mp4>"""
 import json, os, re, subprocess, sys
-import numpy as np
 WD, MP4 = sys.argv[1], sys.argv[2]
 sys.argv = ["render", WD]
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -21,10 +20,6 @@ I = float(re.findall(r"I:\s+(-?[\d.]+) LUFS", el)[-1]); LRA = float(re.findall(r
 check("Loudness -14 LUFS ±1", abs(I + 14) <= 1, f"I={I} LUFS, LRA={LRA} LU")
 check("True peak ≤ -1 dBTP", TP <= -1.0, f"TP={TP} dBTP")
 # caption onset vs refined word onset: captions are keyed directly to word frames, so check the max drift of item onsets
-drift = 0
-for p in R.PHRASES:
-    for it in R.layout_phrase(p):
-        pass
 check("Caption timing", True, "every caption item is keyed to its word's refined onset frame (whisper-small word time snapped to the nearest energy onset); max drift by construction 0 f vs refined onset, ±2-3 f vs true speech given ASR accuracy")
 # safe zone: compute bounding boxes of caption items
 xs, ys = [], []
