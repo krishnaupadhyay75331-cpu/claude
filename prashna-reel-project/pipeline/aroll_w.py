@@ -62,7 +62,7 @@ while True:
     hl=np.clip((hsb[...,2]-0.35)/0.65,0,1); hsb[...,2]-=0.18*hl*hl     # tame bright panels
     bg=cv2.cvtColor(hsb,cv2.COLOR_HSV2RGB)
     bg=bg*0.85+0.15*np.array([0.17,0.09,0.07],np.float32)*(1-bg.mean(2,keepdims=True))*3  # walnut shadow tint
-    bg=cv2.resize(cv2.GaussianBlur(cv2.resize(bg,(W//2,H//2),interpolation=cv2.INTER_AREA),(0,0),2.8),(W,H),interpolation=cv2.INTER_LINEAR)
+    # background blur removed (sharp background)
     # foreground version
     hsf=hsv.copy(); hsf[...,1]*=0.93+0.10*purple; hsf[...,2]*=0.97
     fg=cv2.cvtColor(hsf,cv2.COLOR_HSV2RGB)
