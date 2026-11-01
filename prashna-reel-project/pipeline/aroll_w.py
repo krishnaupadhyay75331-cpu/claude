@@ -49,7 +49,6 @@ while True:
         bil=cv2.bilateralFilter(crop,9,28,7).astype(np.float32)/255
         a=(fm[y0:y1,x0:x1]*0.38)[...,None]
         img[y0:y1,x0:x1]=img[y0:y1,x0:x1]*(1-a)+bil*a
-        img[y0:y1,x0:x1]*=1+0.07*fm[y0:y1,x0:x1][...,None]
     # --- base: warm WB, contrast curve
     img*=np.array([1.03,1.0,0.95],np.float32)
     img=smooth_curve(img*0.98)
@@ -66,7 +65,7 @@ while True:
     # foreground version
     hsf=hsv.copy(); hsf[...,1]*=0.93+0.10*purple; hsf[...,2]*=0.97
     fg=cv2.cvtColor(hsf,cv2.COLOR_HSV2RGB)
-    o=fg*pm+bg*(1-pm)
+    o=fg  # no background darkening (spotlight removed)
     # split tone: plum shadows, gold highlights
     L=o.mean(2,keepdims=True)
     o=o+(1-L)**3*np.array([0.035,-0.01,0.045],np.float32)+L**3*np.array([0.03,0.015,-0.025],np.float32)
